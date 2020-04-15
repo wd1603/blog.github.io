@@ -11,7 +11,7 @@
 
         function getHistoryData(symbol, unit, callback) {
             var varnameJSONP = "data";
-            var api = "http://money.finance.sina.com.cn/quotes_service/api/jsonp_v2.php/var " + varnameJSONP + "=/CN_MarketData.getKLineData?"
+            var api = "https://money.finance.sina.com.cn/quotes_service/api/jsonp_v2.php/var " + varnameJSONP + "=/CN_MarketData.getKLineData?"
                 + "symbol=" + symbol + "&"
                 + "scale=" + unit + "&"
                 + "ma=no&datalen=5"
@@ -24,7 +24,7 @@
 
         function getNewestData(symbol, callback) {
             var varnameJSONP = "hq_str_" + symbol;
-            var api = "http://hq.sinajs.cn/list=" + symbol;
+            var api = "https://hq.sinajs.cn/list=" + symbol;
             $.ajax({url:api, dataType:"script", cache:true, 
                 success:function(response, status) {
                     var data = window[varnameJSONP].split(",");
